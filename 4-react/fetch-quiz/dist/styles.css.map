@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://react-to-do-basics/./src/App.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB;;AAEA;EACE,aAAa;EACb,yBAAyB;AAC3B,C","file":"styles.css","sourcesContent":["#app {\n  text-align: center;\n}\n\nheader {\n  display: flex;\n  justify-content: flex-end;\n}"],"sourceRoot":""}

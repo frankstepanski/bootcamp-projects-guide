@@ -1,0 +1,10 @@
+#app {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*# sourceMappingURL=styles.css.map*/
