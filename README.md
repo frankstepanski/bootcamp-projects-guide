@@ -8,6 +8,7 @@ Project repo for ihatecodingbootcamps.com and ihateauthentication.com
 * javascript
 * react
 * node/express
+* authentication
 * postgres
 * mongodb
 * typescript
