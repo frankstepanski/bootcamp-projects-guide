@@ -2,7 +2,7 @@
 
 Project repo for ihatecodingbootcamps.com and ihateauthentication.com 
 
-### Contains projects on: 
+### Projects on: 
 
 * algos
 * javascript
