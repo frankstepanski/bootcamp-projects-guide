@@ -1,3 +1,13 @@
-# Coding the Basics
+### Coding the Basics
 
-Repo for projects for the ihatecodingbootcamps.com interactive roadmap app.
+## Project repo for ihatecodingbootcamps.com and ihateauthentication.com 
+
+### Contains projects on: 
+
+* algos
+* javascript
+* react
+* node/express
+* postgres
+* mongodb
+* typescript
