@@ -1,6 +1,6 @@
 ## Coding the Basics
 
-Project repo for ihatecodingbootcamps.com and ihateauthentication.com 
+Repo for ihatecodingbootcamps.com and ihateauthentication.com 
 
 ### Projects on: 
 
