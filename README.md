@@ -11,4 +11,5 @@ Project repo for ihatecodingbootcamps.com and ihateauthentication.com
 * authentication
 * postgres
 * mongodb
+* e-commerce
 * typescript
