@@ -12,4 +12,5 @@ Repo for ihatecodingbootcamps.com
 * postgres
 * mongodb
 * e-commerce
+* graphQL
 * typescript
