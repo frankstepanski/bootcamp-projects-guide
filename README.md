@@ -1,8 +1,8 @@
 ## Coding the Basics
 
-Repo for ihatecodingbootcamps.com and ihateauthentication.com 
+Repo for ihatecodingbootcamps.com 
 
-### Projects on: 
+### Projects involving: 
 
 * algos
 * javascript
