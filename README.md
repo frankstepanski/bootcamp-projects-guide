@@ -1,4 +1,4 @@
-## Coding the Basics
+## Bootcamp Projects Guide
 
 Repo for ihatecodingbootcamps.com 
 
