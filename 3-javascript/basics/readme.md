@@ -1,4 +1,4 @@
-## What is JavaScript?
+# What is JavaScript?
 
 *JavaScript* was initially created to "make web pages alive".
 
@@ -88,10 +88,10 @@ That's what makes JavaScript unique. That's why it's the most widespread tool fo
 
 That said, JavaScript also allows to create servers, mobile applications, etc.
 
-
 There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
 
-## Code editors
+
+# Code editors
 
 A code editor is the place where programmers spend most of their time.
 
