@@ -1,5 +1,8 @@
 # JavaScript Basics: Data Types
 
+![JavaScript Basics - Functions](webdev101-js-datatypes.png)
+> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+
 ## Variables
 
 Variables store values that can be used and changed throughout your code.
