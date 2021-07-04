@@ -1,6 +1,6 @@
 # JavaScript Basics: Methods and Functions
 
-![JavaScript Basics - Functions](/sketchnotes/webdev101-js-functions.png)
+![JavaScript Basics - Functions](/images/webdev101-js-functions.png)
 > Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
 
 When we think about writing code, we always want to ensure our code is readable. While this sounds counterintuitive, code is read many more times than it's written. One core tool in a developer's toolbox to ensure maintainable code is the **function**.
