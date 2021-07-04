@@ -130,66 +130,135 @@ The following options deserve your attention:
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
 - [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
 
-# Developer console
+# Getting Started: Hello World
 
-Code is prone to errors. You will quite likely make errors... Oh, what am I talking about? You are *absolutely* going to make errors, at least if you're a human, not a [robot](https://en.wikipedia.org/wiki/Bender_(Futurama)).
 
-But in the browser, users don't see errors by default. So, if something goes wrong in the script, we won't see what's broken and can't fix it.
+This is about core JavaScript, the language itself.
 
-To see errors and get a lot of other useful information about scripts, "developer tools" have been embedded in browsers.
+Let's see how we attach a script to a webpage. For server-side environments (like Node.js), you can execute the script with a command like `"node my.js"`.
 
-Most developers lean towards Chrome or Firefox for development because those browsers have the best developer tools. Other browsers also provide developer tools, sometimes with special features, but are usually playing "catch-up" to Chrome or Firefox. So most developers have a "favorite" browser and switch to others if a problem is browser-specific.
 
-Developer tools are potent; they have many features. To start, we'll learn how to open them, look at errors, and run JavaScript commands.
+## The "script" tag
 
-## Google Chrome
+JavaScript programs can be inserted almost anywhere into an HTML document using the `<script>` tag.
 
-Open the page [bug.html](bug.html).
+For instance:
 
-There's an error in the JavaScript code on it. It's hidden from a regular visitor's eyes, so let's open developer tools to see it.
+```html run height=100
+<!DOCTYPE HTML>
+<html>
 
-Press `key:F12` or, if you're on Mac, then `key:Cmd+Opt+J`.
+<body>
 
-The developer tools will open on the Console tab by default.
+  <p>Before the script...</p>
 
-It looks somewhat like this:
+*!*
+  <script>
+    alert( 'Hello, world!' );
+  </script>
+*/!*
 
-![chrome](chrome.png)
+  <p>...After the script.</p>
 
-The exact look of developer tools depends on your version of Chrome. It changes from time to time but should be similar.
+</body>
 
-- Here we can see the red-colored error message. In this case, the script contains an unknown "lalala" command.
-- On the right, there is a clickable link to the source `bug.html:12` with the line number where the error has occurred.
-
-Below the error message, there is a blue `>` symbol. It marks a "command line" where we can type JavaScript commands. Press `key:Enter` to run them.
-
-Now we can see errors, and that's enough for a start. We'll come back to developer tools later and cover debugging more in-depth in the chapter <info:debugging-chrome>.
-
-```smart header="Multi-line input"
-Usually, when we put a line of code into the console, and then press `key:Enter`, it executes.
-
-To insert multiple lines, press `key:Shift+Enter`. This way one can enter long fragments of JavaScript code.
+</html>
 ```
 
-## Firefox, Edge, and others
+```online
+You can run the example by clicking the "Play" button in the right-top corner of the box above.
+```
 
-Most other browsers use `key:F12` to open developer tools.
+The `<script>` tag contains JavaScript code which is automatically executed when the browser processes the tag.
 
-The look & feel of them is quite similar. Once you know how to use one of these tools (you can start with Chrome), you can easily switch to another.
 
-## Safari
+## Modern markup
 
-Safari (Mac browser, not supported by Windows/Linux) is a little bit special here. We need to enable the "Develop menu" first.
+The `<script>` tag has a few attributes that are rarely used nowadays but can still be found in old code:
 
-Open Preferences and go to the "Advanced" pane. There's a checkbox at the bottom:
+The `type` attribute: <code>&lt;script <u>type</u>=...&gt;</code>
+: The old HTML standard, HTML4, required a script to have a `type`. Usually it was `type="text/javascript"`. It's not required anymore. Also, the modern HTML standard totally changed the meaning of this attribute. Now, it can be used for JavaScript modules. But that's an advanced topic, we'll talk about modules in another part of the tutorial.
 
-![safari](safari.png)
+The `language` attribute: <code>&lt;script <u>language</u>=...&gt;</code>
+: This attribute was meant to show the language of the script. This attribute no longer makes sense because JavaScript is the default language. There is no need to use it.
 
-Now `key:Cmd+Opt+C` can toggle the console. Also, note that the new top menu item named "Develop" has appeared. It has many commands and options.
+Comments before and after scripts.
+: In really ancient books and guides, you may find comments inside `<script>` tags, like this:
+
+    ```html no-beautify
+    <script type="text/javascript"><!--
+        ...
+    //--></script>
+    ```
+
+    This trick isn't used in modern JavaScript. These comments hide JavaScript code from old browsers that didn't know how to process the `<script>` tag. Since browsers released in the last 15 years don't have this issue, this kind of comment can help you identify really old code.
+
+
+## External scripts
+
+If we have a lot of JavaScript code, we can put it into a separate file.
+
+Script files are attached to HTML with the `src` attribute:
+
+```html
+<script src="/path/to/script.js"></script>
+```
+
+Here, `/path/to/script.js` is an absolute path to the script from the site root. One can also provide a relative path from the current page. For instance, `src="script.js"` would mean a file `"script.js"` in the current folder.
+
+We can give a full URL as well. For instance:
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
+```
+
+To attach several scripts, use multiple tags:
+
+```html
+<script src="/js/script1.js"></script>
+<script src="/js/script2.js"></script>
+…
+```
+
+```smart
+As a rule, only the simplest scripts are put into HTML. More complex ones reside in separate files.
+
+The benefit of a separate file is that the browser will download it and store it in its [cache](https://en.wikipedia.org/wiki/Web_cache).
+
+Other pages that reference the same script will take it from the cache instead of downloading it, so the file is actually downloaded only once.
+
+That reduces traffic and makes pages faster.
+```
+
+````warn header="If `src` is set, the script content is ignored."
+A single `<script>` tag can't have both the `src` attribute and code inside.
+
+This won't work:
+
+```html
+<script *!*src*/!*="file.js">
+  alert(1); // the content is ignored, because src is set
+</script>
+```
+
+We must choose either an external `<script src="…">` or a regular `<script>` with code.
+
+The example above can be split into two scripts to work:
+
+```html
+<script src="file.js"></script>
+<script>
+  alert(1);
+</script>
+```
+````
 
 ## Summary
 
-- Developer tools allow us to see errors, run commands, examine variables, and much more.
-- They can be opened with `key:F12` for most browsers on Windows. Chrome for Mac needs `key:Cmd+Opt+J`, Safari: `key:Cmd+Opt+C` (need to enable first).
+- We can use a `<script>` tag to add JavaScript code to a page.
+- The `type` and `language` attributes are not required.
+- A script in an external file can be inserted with `<script src="path/to/script.js"></script>`.
 
-Now we have the environment ready. In the next section, we'll get down to JavaScript.
+
+There is much more to learn about browser scripts and their interaction with the webpage. But let's keep in mind that this part of the tutorial is devoted to the JavaScript language, so we shouldn't distract ourselves with browser-specific implementations of it. We'll be using the browser as a way to run JavaScript, which is very convenient for online reading, but only one of many.
+
