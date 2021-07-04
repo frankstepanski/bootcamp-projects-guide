@@ -1,20 +1,5 @@
 # JavaScript Basics: Data Types
 
-![JavaScript Basics - Data types](/sketchnotes/webdev101-js-datatypes.png)
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
-
-## Pre-Lecture Quiz
-[Pre-lecture quiz](https://nice-beach-0fe9e9d0f.azurestaticapps.net/quiz/7)
-
-This lesson covers the basics of JavaScript, the language that provides interactivity on the web.
-
-> You can take this lesson on [Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/web-development-101-variables/?WT.mc_id=academic-13441-cxa)!
-
-[![Data types in JavaScript](https://img.youtube.com/vi/JNIXfGiDWM8/0.jpg)](https://youtube.com/watch?v=JNIXfGiDWM8 "Data types in JavaScript")
-
-> 🎥 Click the image above for a video about data types
-
-Let's start with variables and the data types that populate them!
 ## Variables
 
 Variables store values that can be used and changed throughout your code.
@@ -182,17 +167,3 @@ Booleans can be only two values: `true` or `false`. Booleans can help make decis
 
 ---
 
-## 🚀 Challenge
-
-JavaScript is notorious for its surprising ways of handling datatypes on occasion. Do a bit of research on these 'gotchas'. For example: case sensitivity can bite! Try this in your console: `let age = 1; let Age = 2; age == Age` (resolves `false` -- why?). What other gotchas can you find?
-
-## Post-Lecture Quiz
-[Post-lecture quiz](https://nice-beach-0fe9e9d0f.azurestaticapps.net/quiz/8)
-
-## Review & Self Study
-
-Take a look at [this list of JavaScript exercises](https://css-tricks.com/snippets/javascript/) and try one. What did you learn?
-
-## Assignment
-
-[Data Types Practice](assignment.md)
