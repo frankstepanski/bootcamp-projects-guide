@@ -1,8 +1,6 @@
-## Bootcamp Projects Guide
+## Learn By Coding Projects
 
-Repo for ihatecodingbootcamps.com 
-
-### Projects involving: 
+### Projects involve: 
 
 * algos
 * javascript
